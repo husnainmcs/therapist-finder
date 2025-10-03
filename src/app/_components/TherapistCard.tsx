@@ -1,7 +1,7 @@
 import React from "react";
 import { MapPin, Clock, DollarSign } from "lucide-react";
 
-import type { Therapist } from "@/types/SharedTypes"
+import type { Therapist } from "@/types/sharedTypes";
 
 interface TherapistCardProps {
   therapist: Therapist;
