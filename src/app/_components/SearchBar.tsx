@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Search, Filter, MenuIcon } from "lucide-react";
+import { Search, MenuIcon } from "lucide-react";
 
 interface SearchBarProps {
   searchQuery: string;
@@ -12,7 +12,6 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   searchQuery,
   onSearchChange,
   onFiltersToggle,
-  appliedFiltersCount,
 }) => {
   const [localQuery, setLocalQuery] = useState(searchQuery);
 
