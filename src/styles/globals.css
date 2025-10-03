@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+/* Custom utilities for better mobile experience */
+@layer utilities {
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .touch-action-none {
+    touch-action: none;
+  }
+}
+
+/* Smooth scrolling for mobile */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Better tap targets for mobile */
+@media (max-width: 768px) {
+  button, 
+  [role="button"],
+  .card {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent zoom on input focus for mobile */
+@media (max-width: 768px) {
+  input, 
+  select, 
+  textarea {
+    font-size: 16px;
+  }
+}
