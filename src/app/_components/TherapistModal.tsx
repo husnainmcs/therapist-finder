@@ -49,9 +49,9 @@ export const TherapistModal: React.FC<TherapistModalProps> = ({
         ) : therapist ? (
           <>
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-gray-200 p-6">
+            <div className="flex items-center justify-between border-b border-gray-200 p-3 lg:p-6">
               <div className="flex items-center space-x-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
+                <div className="flex  h-12 w-12 lg:h-16 lg:w-16 items-center justify-center rounded-full bg-teal-100">
                   <span className="text-lg font-semibold text-teal-600">
                     {therapist.name
                       .split(" ")
@@ -60,7 +60,7 @@ export const TherapistModal: React.FC<TherapistModalProps> = ({
                   </span>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <h2 className="text-1xl lg:text-2xl font-bold text-gray-900">
                     {therapist.name}
                   </h2>
                   <p className="text-gray-600 capitalize">
@@ -220,7 +220,7 @@ export const TherapistModal: React.FC<TherapistModalProps> = ({
             </div>
 
             {/* Action Buttons Footer */}
-            <div className="flex flex-col gap-3 border-t border-gray-200 bg-gray-50 p-6 sm:flex-row">
+            <div className="hidden flex-col gap-3 border-t border-gray-200 bg-gray-50 p-4 sm:flex sm:flex-row sm:gap-4">
               {therapist.phone && (
                 <button
                   onClick={() => makePhoneCall(therapist.phone!)}
