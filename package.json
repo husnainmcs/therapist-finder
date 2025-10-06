@@ -16,6 +16,11 @@
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
     "dev": "next dev --turbo",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest watch",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
     "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
     "postinstall": "prisma generate",
@@ -46,11 +51,16 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.0.15",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
     "@types/node": "^20.19.19",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "@vitest/ui": "^3.2.4",
     "eslint": "^9.23.0",
     "eslint-config-next": "^15.2.3",
+    "jsdom": "^27.0.0",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
@@ -58,7 +68,10 @@
     "tailwindcss": "^4.0.15",
     "tsx": "^4.20.6",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.27.0"
+    "typescript-eslint": "^8.27.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.2.4",
+    "vitest-mock-extended": "^3.1.0"
   },
   "ct3aMetadata": {
     "initVersion": "7.39.3"
