@@ -114,7 +114,7 @@ const Home: NextPage = () => {
     therapistData?.pages.flatMap((page) => page.therapists) || [];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 transition-colors duration-300 dark:bg-gray-900">
       {/* Search Header */}
       <SearchBar
         searchQuery={searchQuery}
@@ -159,7 +159,7 @@ const Home: NextPage = () => {
               {/* Results Header */}
               <div className="mb-6 flex items-center justify-between">
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-900">
+                  <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100">
                     {isLoading
                       ? "Loading therapists..."
                       : `${allTherapists.length} therapists found`}

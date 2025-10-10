@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Search, MenuIcon } from "lucide-react";
+import { ThemeSwitch } from "./theme-switch";
 
 interface SearchBarProps {
   searchQuery: string;
@@ -25,7 +26,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   }, [localQuery, onSearchChange]);
 
   return (
-    <div className="sticky top-0 z-30 border-b border-gray-200 bg-gray-900">
+    <div className="sticky top-0 z-30 border-b border-gray-200 bg-white transition-colors duration-300 dark:bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo/Brand */}
@@ -34,7 +35,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
               <div className="flex h-8 w-8 items-center justify-center rounded-lg text-2xl">
                 🧠
               </div>
-              <h1 className="text-xl font-bold text-white">
+              <h1 className="text-xl font-bold text-gray-900 dark:text-white">
                 MindCare Pakistan
               </h1>
             </div>
@@ -51,16 +52,20 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 value={localQuery}
                 onChange={(e) => setLocalQuery(e.target.value)}
                 placeholder="Search by name, expertise, education, or specializations..."
-                className="block w-full rounded-md border border-gray-300 bg-white py-2 pr-3 pl-10 leading-5 placeholder-gray-500 focus:border-teal-500 focus:placeholder-gray-400 focus:ring-1 focus:ring-teal-500 focus:outline-none"
+                className="block w-full rounded-md border border-gray-300 bg-white py-2 pr-3 pl-10 leading-5 placeholder-gray-500 transition-colors duration-300 focus:border-teal-500 focus:placeholder-gray-400 focus:ring-1 focus:ring-teal-500 focus:outline-none dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
               />
             </div>
           </div>
 
-          {/* Mobile Search & Filter Button */}
-          <div className="flex items-center space-x-2 md:hidden">
+          {/* Right Side: Theme Toggle + Mobile Filter Button */}
+          <div className="flex items-center space-x-3">
+            {/* Theme Toggle */}
+            <ThemeSwitch />
+
+            {/* Mobile Filter Button */}
             <button
               onClick={onFiltersToggle}
-              className="hover:bg-gray relative rounded-md p-2 text-2xl text-white  hover:text-gray-200"
+              className="md:hidden  inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-300 text-gray-700 transition hover:bg-gray-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
             >
               <MenuIcon className="h-5 w-5" />
             </button>
@@ -78,7 +83,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
               value={localQuery}
               onChange={(e) => setLocalQuery(e.target.value)}
               placeholder="Search therapists..."
-              className="block w-full rounded-md border border-gray-300 bg-white py-2 pr-3 pl-10 leading-5 placeholder-gray-500 focus:border-teal-500 focus:placeholder-gray-400 focus:ring-1 focus:ring-teal-500 focus:outline-none"
+              className="block w-full rounded-md border border-gray-300 bg-white py-2 pr-3 pl-10 leading-5 placeholder-gray-500 transition-colors duration-300 focus:border-teal-500 focus:placeholder-gray-400 focus:ring-1 focus:ring-teal-500 focus:outline-none dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
             />
           </div>
         </div>
